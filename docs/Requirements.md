@@ -1,0 +1,4 @@
+- Display a fullscreen window.
+- Render pixels on the screen.
+- Animate the rendered pixels.
+- Close the application when the 'Escape' key is pressed.

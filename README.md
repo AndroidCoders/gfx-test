@@ -1,0 +1,1 @@
+A project for learning the Rust programming language by creating graphical effects.

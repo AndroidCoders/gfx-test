@@ -6,6 +6,7 @@ pub mod renderer;
 use sdl3::pixels::Color;
 use sdl3::event::Event;
 use sdl3::keyboard::Keycode;
+use sdl3::rect::Rect;
 
 fn main() -> Result<(), String> {
     let sdl_context = sdl3::init().map_err(|e| e.to_string())?; // TODO: Error handling
@@ -45,11 +46,9 @@ fn main() -> Result<(), String> {
         // Set draw color to white for pixels
         canvas.set_draw_color(Color::RGB(255, 255, 255));
 
-        // Draw a few points
-        canvas.draw_point((100, 100)).map_err(|e| e.to_string())?; // TODO: Error handling
-        canvas.draw_point((200, 200)).map_err(|e| e.to_string())?; // TODO: Error handling
-        canvas.draw_point((300, 100)).map_err(|e| e.to_string())?; // TODO: Error handling
-        canvas.draw_point((400, 200)).map_err(|e| e.to_string())?; // TODO: Error handling
+        // Draw a box
+        let box_rect = Rect::new(100, 100, 100, 100);
+        canvas.fill_rect(box_rect).map_err(|e| e.to_string())?; // TODO: Error handling
 
         // Present the changes to the screen
         canvas.present();

@@ -40,6 +40,16 @@ fn main() -> Result<(), String> {
 
         // Clear the screen
         canvas.clear();
+
+        // Set draw color to white
+        canvas.set_draw_color(Color::RGB(255, 255, 255));
+
+        // Draw a few points
+        canvas.draw_point((100, 100)).map_err(|e| e.to_string())?; // TODO: Error handling
+        canvas.draw_point((200, 200)).map_err(|e| e.to_string())?; // TODO: Error handling
+        canvas.draw_point((300, 100)).map_err(|e| e.to_string())?; // TODO: Error handling
+        canvas.draw_point((400, 200)).map_err(|e| e.to_string())?; // TODO: Error handling
+
         // Present the changes to the screen
         canvas.present();
     }

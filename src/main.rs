@@ -21,7 +21,7 @@ fn main() -> Result<(), String> {
 
     let mut canvas = window.into_canvas(); // TODO: Error handling
 
-    canvas.set_draw_color(Color::RGB(0, 0, 0)); // Black background
+    // canvas.set_draw_color(Color::RGB(0, 0, 0)); // Black background - MOVED INSIDE LOOP
 
     let mut event_pump = sdl_context.event_pump().map_err(|e| e.to_string())?; // TODO: Error handling
 
@@ -38,10 +38,11 @@ fn main() -> Result<(), String> {
             }
         }
 
-        // Clear the screen
+        // Set background color to black and clear the screen
+        canvas.set_draw_color(Color::RGB(0, 0, 0));
         canvas.clear();
 
-        // Set draw color to white
+        // Set draw color to white for pixels
         canvas.set_draw_color(Color::RGB(255, 255, 255));
 
         // Draw a few points

@@ -1,4 +1,4 @@
-- Display a fullscreen window.
-- Render pixels on the screen.
-- Animate the rendered pixels.
-- Close the application when the 'Escape' key is pressed.
+The application SHALL display a fullscreen window.
+The application SHALL render pixels on the screen.
+The application SHALL animate the rendered pixels.
+The application SHALL close when the 'Escape' key is pressed.

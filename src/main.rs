@@ -1,14 +1,14 @@
-extern crate sdl2;
+extern crate sdl3;
 
 pub mod game_state;
 pub mod renderer;
 
-use sdl2::pixels::Color;
-use sdl2::event::Event;
-use sdl2::keyboard::Keycode;
+use sdl3::pixels::Color;
+use sdl3::event::Event;
+use sdl3::keyboard::Keycode;
 
 fn main() -> Result<(), String> {
-    let sdl_context = sdl2::init().map_err(|e| e.to_string())?; // TODO: Error handling
+    let sdl_context = sdl3::init().map_err(|e| e.to_string())?; // TODO: Error handling
     let video_subsystem = sdl_context.video().map_err(|e| e.to_string())?; // TODO: Error handling
 
     let window = video_subsystem.window(

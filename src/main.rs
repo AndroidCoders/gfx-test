@@ -19,7 +19,7 @@ fn main() -> Result<(), String> {
     .fullscreen() // Set to fullscreen
     .build().map_err(|e| e.to_string())?; // TODO: Error handling
 
-    let mut canvas = window.into_canvas().build().map_err(|e| e.to_string())?; // TODO: Error handling
+    let mut canvas = window.into_canvas().map_err(|e| e.to_string())?; // TODO: Error handling
 
     canvas.set_draw_color(Color::RGB(0, 0, 0)); // Black background
 

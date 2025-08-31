@@ -1,3 +1,5 @@
+File version: 1.00
+
 A project for learning the the Rust programming language by creating graphical effects.
 
 ## How to Run

@@ -1,3 +1,5 @@
+File version: 1.00
+
 # Coding Conventions
 
 This document outlines the agreed-upon coding conventions and design principles for the `gfx-test` project.

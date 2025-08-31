@@ -1,3 +1,5 @@
+File version: 1.00
+
 The application SHALL display a fullscreen window.
 The application SHALL render pixels on the screen.
 The application SHALL animate the rendered pixels.

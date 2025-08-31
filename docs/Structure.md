@@ -1,3 +1,5 @@
+File version: 1.00
+
 - `README.md`: Project description.
 - `docs/`: Folder for the Guiding Documents.
 - `docs/Structure.md`: File structure overview.

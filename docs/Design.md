@@ -1,3 +1,5 @@
+File version: 1.00
+
 ## Architecture
 
 A simple game loop architecture will be used.

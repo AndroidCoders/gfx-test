@@ -16,7 +16,7 @@ fn main() -> Result<(), String> {
         1920, // TODO: Use constants for screen dimensions
         1080
     )
-    .fullscreen_desktop() // Set to fullscreen
+    .fullscreen() // Set to fullscreen
     .build().map_err(|e| e.to_string())?; // TODO: Error handling
 
     let mut canvas = window.into_canvas().build().map_err(|e| e.to_string())?; // TODO: Error handling

@@ -8,8 +8,8 @@ use sdl2::event::Event;
 use sdl2::keyboard::Keycode;
 
 fn main() -> Result<(), String> {
-    let sdl_context = sdl2::init()?; // TODO: Error handling
-    let video_subsystem = sdl_context.video()?; // TODO: Error handling
+    let sdl_context = sdl2::init().map_err(|e| e.to_string())?; // TODO: Error handling
+    let video_subsystem = sdl_context.video().map_err(|e| e.to_string())?; // TODO: Error handling
 
     let window = video_subsystem.window(
         "gfx-test",
@@ -17,13 +17,13 @@ fn main() -> Result<(), String> {
         1080
     )
     .fullscreen_desktop() // Set to fullscreen
-    .build()?; // TODO: Error handling
+    .build().map_err(|e| e.to_string())?; // TODO: Error handling
 
-    let mut canvas = window.into_canvas().build()?; // TODO: Error handling
+    let mut canvas = window.into_canvas().build().map_err(|e| e.to_string())?; // TODO: Error handling
 
     canvas.set_draw_color(Color::RGB(0, 0, 0)); // Black background
 
-    let mut event_pump = sdl_context.event_pump()?; // TODO: Error handling
+    let mut event_pump = sdl_context.event_pump().map_err(|e| e.to_string())?; // TODO: Error handling
 
     'running: loop {
         for event in event_pump.poll_iter() {

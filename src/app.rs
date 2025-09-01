@@ -3,9 +3,9 @@ use sdl3::video::Window;
 use sdl3::render::Canvas;
 use sdl3::event::Event;
 use sdl3::keyboard::Keycode;
-use sdl3::pixels::Color;
 
 use crate::game_state::GameState;
+use crate::renderer::Renderer;
 #[cfg(feature = "debug-video-to-png")]
 use crate::frame_capture::FrameCapture;
 
@@ -16,6 +16,7 @@ pub struct App {
     canvas: Canvas<Window>,
     game_state: GameState,
     event_pump: EventPump,
+    renderer: Renderer,
     #[cfg(feature = "debug-video-to-png")]
     frame_capture: Option<FrameCapture>,
 }
@@ -36,11 +37,13 @@ impl App {
         let canvas = window.into_canvas();
         let game_state = GameState::new();
         let event_pump = sdl_context.event_pump()?;
+        let renderer = Renderer::new();
 
         Ok(Self {
             canvas,
             game_state,
             event_pump,
+            renderer,
             #[cfg(feature = "debug-video-to-png")]
             frame_capture: Some(FrameCapture::new()),
         })
@@ -60,11 +63,7 @@ impl App {
 
             self.game_state.update();
 
-            self.canvas.set_draw_color(Color::RGB(0, 0, 0));
-            self.canvas.clear();
-            self.canvas.set_draw_color(Color::RGB(255, 255, 255));
-            self.canvas.fill_rect(self.game_state.box_rect).map_err(|e| e.to_string())?;
-            self.canvas.present();
+            self.renderer.draw(&mut self.canvas, &self.game_state)?;
 
             #[cfg(feature = "debug-video-to-png")]
             {

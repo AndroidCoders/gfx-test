@@ -1,5 +1,10 @@
 File version: 1.01
 
+> **TLDR:**
+> *   This document lists the core application requirements for `gfx-test`.
+> *   It also details requirements for the video debug output feature.
+> *   The debug output is activated by a `debug-video-to-png` feature flag.
+
 # Core Application Requirements
 
 *   The application SHALL display a fullscreen window.
@@ -14,3 +19,4 @@ File version: 1.01
 *   The application SHALL save the 10 captured frame buffers to PNG files upon program exit (e.g., when the 'Escape' key is pressed).
 *   The saved PNG files SHALL be named descriptively (e.g., `output/frame_0001.png`, `output/frame_0100.png`).
 *   The purpose of these PNG files is to provide visual test output for debugging and verification.
+*   The video debug output SHALL be activated by a feature flag named `debug-video-to-png`.

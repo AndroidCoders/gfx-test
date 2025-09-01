@@ -1,5 +1,10 @@
 File version: 1.00
 
+> **TLDR:**
+> *   This document defines the coding conventions and design principles for the `gfx-test` project.
+> *   It emphasizes modular design, data-driven design, and encapsulation.
+> *   Code style adheres to `rustfmt` and `clippy` recommendations.
+
 # Coding Conventions
 
 This document outlines the agreed-upon coding conventions and design principles for the `gfx-test` project.

@@ -1,5 +1,10 @@
 File version: 1.01
 
+> **TLDR:**
+> *   This document specifies the technology stack used in the `gfx-test` project.
+> *   Key technologies include Linux, SDL3, and Rust.
+> *   The project uses the `image` crate for PNG output.
+
 - Development system OS: Linux Fedora 42
 - Graphics Library: SDL3
 - Language: Rust

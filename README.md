@@ -1,6 +1,6 @@
-File version: 1.00
+File version: 1.01
 
-A project for learning the the Rust programming language by creating graphical effects.
+A project for learning the the Rust programming language by creating graphical effects. This application displays a white box that animates across a black fullscreen background.
 
 ## How to Run
 

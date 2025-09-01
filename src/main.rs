@@ -2,6 +2,9 @@ mod app;
 mod game_state;
 mod renderer;
 
+#[cfg(feature = "debug-video-to-png")]
+mod frame_capture;
+
 use app::App;
 
 fn main() -> Result<(), String> {

@@ -1,9 +1,9 @@
 File version: 1.01
 
-> **TLDR:**
-> *   This project is a Rust application for creating graphical effects.
-> *   It displays an animated white box on a fullscreen background.
-> *   The application can be run with or without a debug feature to save PNG screenshots.
+**TLDR:**
+* This project is a Rust application for creating graphical effects.
+* It displays an animated white box on a fullscreen background.
+* The application can be run with or without a debug feature to save PNG screenshots.
 
 A project for learning the the Rust programming language by creating graphical effects. This application displays a white box that animates across a black fullscreen background.
 

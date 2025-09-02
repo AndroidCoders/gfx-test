@@ -1,13 +1,15 @@
-File version: 1.01
+File version: 1.02
 
-> **TLDR:**
-> *   This document describes the `gfx-test` project.
-> *   It's a Rust application for graphical effects using SDL3.
-> *   Key features include an animated box and a debug frame-saving option.
+**TLDR:**
+This document describes the `gfx-test` project:
+* Rust application for graphical effects using SDL3
+* Displays animated white box on black background
 
-This project, `gfx-test`, is a Rust application for creating graphical effects using the SDL3 library. It opens a fullscreen window and displays a white box animated on a black background. The application can be closed by pressing the 'Escape' key.
+`gfx-test` is a Rust application that uses the SDL3 library to create graphical effects. It displays an animated white box on a black background in a fullscreen window. The application exits when the 'Escape' key is pressed.
 
-The codebase is organized into modules for the main application (`app.rs`), application state (`game_state.rs`), and a placeholder for a renderer (`renderer.rs`). The `game_state.rs` module manages the position of the box and a frame counter.
+The codebase is modular, with `app.rs` for the main application, `game_state.rs` for managing the box's position and frame counter, and `renderer.rs` as a drawing module.
 
-A key feature is the ability to capture and save specific frames as PNG images for debugging purposes, which can be enabled with a feature flag. The application saves frames 1, 100, 200, and so on, up to 900, into an `output` directory. The project's documentation outlines a clear structure, coding style, and a set of requirements. The project is built using Cargo.
+A key debug feature allows capturing and saving specific frames (1, 100, 200...900) as PNG images in the `output` directory upon exit. The debug feature is enabled by a feature flag:
+cargo run --features debug-video-to-png
 
+The project follows a clear structure, coding style, and requirements, and is built with Cargo.

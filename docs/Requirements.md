@@ -9,7 +9,7 @@ This document lists the core application requirements for `gfx-test`:
 # Core Application Requirements
 
 - The application SHALL display a fullscreen window.
-- The application SHALL render pixels (a box) on the screen.
+- The application SHALL render pixels (multiple boxes) on the screen.
 - The application SHALL animate the rendered pixels.
 - The application SHALL close when the 'Escape' key is pressed.
 

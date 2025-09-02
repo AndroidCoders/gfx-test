@@ -11,5 +11,5 @@ This document lists the Development Tasks for the `gfx-test` project:
 [x] Implement animation logic
 [x] Exit program when Esc keypress detected
 [x] Add a debug feature for saving screenshots
-[ ] Add support for multiple animated objects
+[x] Add support for multiple animated objects
 [ ] Implement basic physics and collision detection

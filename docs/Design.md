@@ -14,9 +14,7 @@ A simple game loop architecture will be used.
 - `main.rs`: Entry point
 - `app.rs`: Initializes SDL, creates the fullscreen canvas, and runs the main loop.
 - `renderer.rs`: A module responsible for drawing on the canvas.
-- `game_state.rs`: A module to hold the state of the application (e.g., pixel position).
-- `renderer.rs`: A module responsible for drawing on the canvas.
-- `game_state.rs`: A module to hold the state of the application (e.g., pixel position).
+- `game_state.rs`: A module to hold the state of the application (e.g., a list of game objects with positions and velocities).
 - `frame_capture.rs`: A conditionally compiled module for capturing and saving frames for debugging.
 
 ## Version Control

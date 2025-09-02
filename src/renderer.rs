@@ -14,7 +14,9 @@ impl Renderer {
         canvas.set_draw_color(Color::RGB(0, 0, 0));
         canvas.clear();
         canvas.set_draw_color(Color::RGB(255, 255, 255));
-        canvas.fill_rect(game_state.box_rect).map_err(|e| e.to_string())?;
+        for object in &game_state.objects {
+            canvas.fill_rect(object.rect).map_err(|e| e.to_string())?;
+        }
         canvas.present();
         Ok(())
     }

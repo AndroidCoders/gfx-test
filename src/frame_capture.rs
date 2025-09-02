@@ -22,7 +22,7 @@ impl FrameCapture {
         if self.captured_frames.len() < MAX_CAPTURED_FRAMES &&
            (frame_counter == 1 || (frame_counter % 100 == 0 && frame_counter <= 900))
         {
-            let mut surface = canvas.read_pixels(None).map_err(|e| e.to_string())?;
+            let mut surface = canvas.read_pixels(None)?;
             let bytes_per_pixel_source = 3; // Assuming RGB24 from the canvas
 
             let mut rgba_pixels = Vec::with_capacity((SCREEN_WIDTH * SCREEN_HEIGHT * 4) as usize);

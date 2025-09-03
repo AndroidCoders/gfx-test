@@ -26,6 +26,8 @@ impl App {
         let sdl_context = sdl3::init()?;
         let video_subsystem = sdl_context.video()?;
 
+        sdl3::hint::set("SDL_RENDER_VSYNC", "1");
+
         let window = video_subsystem.window(
             "gfx-test",
             SCREEN_WIDTH,
@@ -35,6 +37,7 @@ impl App {
         .build()?;
 
         let canvas = window.into_canvas();
+
         let game_state = GameState::new();
         let event_pump = sdl_context.event_pump()?;
         let renderer = Renderer::new();
@@ -50,7 +53,19 @@ impl App {
     }
 
     pub fn run(&mut self) -> Result<(), String> {
+        let mut accumulator = 0.0;
+        let timestep = 1.0 / 60.0;
+
+        let mut last_time = sdl3::timer::performance_counter();
+        let perf_freq = sdl3::timer::performance_frequency() as f64;
+
         'running: loop {
+            let current_time = sdl3::timer::performance_counter();
+            let delta_time = (current_time - last_time) as f64 / perf_freq;
+            last_time = current_time;
+
+            accumulator += delta_time;
+
             for event in self.event_pump.poll_iter() {
                 match event {
                     Event::Quit {..} |
@@ -61,7 +76,10 @@ impl App {
                 }
             }
 
-            self.game_state.update();
+            while accumulator >= timestep {
+                self.game_state.update();
+                accumulator -= timestep;
+            }
 
             self.renderer.draw(&mut self.canvas, &self.game_state)?;
 

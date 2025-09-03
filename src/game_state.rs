@@ -32,18 +32,21 @@ impl GameState {
         }
     }
 
-    pub fn update(&mut self) {
+    pub fn update(&mut self, width: u32, height: u32) {
         self.frame_counter += 1;
         for object in &mut self.objects {
-            object.rect.x += object.velocity.0;
-            object.rect.y += object.velocity.1;
-
-            if object.rect.left() < 0 || object.rect.right() > 1920 {
+            let next_x = object.rect.x + object.velocity.0;
+            if next_x < 0 || (next_x + object.rect.width() as i32) > width as i32 {
                 object.velocity.0 = -object.velocity.0;
             }
-            if object.rect.top() < 0 || object.rect.bottom() > 1080 {
+
+            let next_y = object.rect.y + object.velocity.1;
+            if next_y < 0 || (next_y + object.rect.height() as i32) > height as i32 {
                 object.velocity.1 = -object.velocity.1;
             }
+
+            object.rect.x += object.velocity.0;
+            object.rect.y += object.velocity.1;
         }
     }
 }

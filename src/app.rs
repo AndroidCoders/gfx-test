@@ -76,8 +76,10 @@ impl App {
                 }
             }
 
+            let (width, height) = self.canvas.output_size().map_err(|e| e.to_string())?;
+
             while accumulator >= timestep {
-                self.game_state.update();
+                self.game_state.update(width, height);
                 accumulator -= timestep;
             }
 

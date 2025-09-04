@@ -88,7 +88,7 @@ impl App {
             #[cfg(feature = "debug-video-to-png")]
             {
                 if let Some(fc) = &mut self.frame_capture {
-                    fc.capture_frame(self.game_state.frame_counter, &mut self.canvas)?;
+                    fc.capture_frame(self.game_state.frame_counter, width, height, &mut self.canvas)?;
                 }
             }
         }

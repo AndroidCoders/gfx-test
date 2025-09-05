@@ -74,8 +74,18 @@ All new work should be done on a separate branch. Branch names should be descrip
   ```
 
 - **Create a Pull Request:**
-  Go to the project's GitHub page and create a new pull request from your branch
-  to the `main` branch.
+  You can create a pull request using the GitHub web interface or the GitHub CLI.
+
+  - **Using the Web Interface:**
+    Go to the project's GitHub page and create a new pull request from your branch
+    to the `main` branch.
+
+  - **Using the GitHub CLI:**
+    You can use the `gh pr create` command to create a pull request from the command line.
+
+    ```bash
+    gh pr create --title "feat: Add new feature" --body "Detailed description of the new feature."
+    ```
 
 - **Code Review:**
   At least one other person should review your pull request before it is merged.
@@ -85,5 +95,20 @@ All new work should be done on a separate branch. Branch names should be descrip
 ## Merging
 
 Once the pull request has been approved, it can be merged into the `main` branch.
-Use the "Squash and merge" option on GitHub to keep the commit history clean.
-After merging, the feature branch should be deleted.
+
+- **Using the Web Interface:**
+  Use the "Squash and merge" option on GitHub to keep the commit history clean.
+  After merging, the feature branch should be deleted.
+
+- **Using the GitHub CLI:**
+  You can use the `gh pr merge` command to merge a pull request from the command line.
+  It is recommended to use the `--squash` option to keep the commit history clean.
+
+  ```bash
+  gh pr merge --squash
+  ```
+  After merging, you can delete the branch both locally and on the remote.
+  ```bash
+  git branch -d <branch-name>
+  git push origin --delete <branch-name>
+  ```
